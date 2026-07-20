@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Audio — Sonido, Iluminación y Visuales para Eventos | Montevideo, Uruguay</title>
+<meta name="description" content="Local Audio: soluciones profesionales de sonido, iluminación, DJ, VJ y producción para eventos en Montevideo, Uruguay. Fiestas, casamientos, conciertos y eventos corporativos. Pedí tu presupuesto por WhatsApp.">
+<meta property="og:title" content="Local Audio — Sonido e Iluminación para Eventos en Uruguay">
+<meta property="og:description" content="Audio en vivo, iluminación, visuales y producción para eventos de 50 a 400+ personas. Más de 10 años de experiencia nacional e internacional.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/hero.jpg">
+<meta property="og:locale" content="es_UY">
+<meta name="theme-color" content="#070d14">
+<link rel="icon" type="image/svg+xml" href="assets/isotipo.svg">
+<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500..900&family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Local Audio",
+  "description": "Soluciones profesionales de sonido, iluminación, visuales y producción para eventos.",
+  "telephone": "+59894192034",
+  "email": "localaudiouy@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Montevideo", "addressCountry": "UY" },
+  "sameAs": ["https://www.instagram.com/local.audio/", "https://www.facebook.com/profile.php?id=61552248909200"],
+  "priceRange": "$$"
+}
+</script>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --negro:#070d14;
+  --panel:#0a121f;
+  --azul:#0059ff;
+  --azul-claro:#4d8aff;
+  --blanco:#f2f6fd;
+  --gris:#8b95a6;
+  --linea:rgba(130,160,255,.14);
+  --display:'Archivo',sans-serif;
+  --body:'Hanken Grotesk',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --ancho:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--negro)}
+body{background:transparent;color:var(--blanco);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* foto fija blureada detrás de todo */
+.fondo-fijo{position:fixed;inset:-40px;z-index:-2;background:url('assets/img/noche-purpura.jpg') center/cover no-repeat;filter:blur(34px) brightness(.32) saturate(1.15);pointer-events:none}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--azul);color:#fff}
+
+h1,h2,h3,.display{font-family:var(--display);font-stretch:125%;text-transform:uppercase;line-height:1.02;letter-spacing:.01em;overflow-wrap:break-word}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--azul-claro);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--azul)}
+.wrap{max-width:var(--ancho);margin:0 auto;padding:0 5vw}
+section{position:relative}
+
+/* reveal */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.rev.in{opacity:1;transform:none}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:var(--linea)}
+.nav-in{max-width:1380px;margin:0 auto;padding:0 4vw;height:90px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);transition:color .25s;white-space:nowrap}
+.nav-links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;border:1px solid var(--azul);border-radius:999px;color:#fff;background:var(--azul);transition:all .3s;cursor:pointer}
+.btn:hover{background:transparent;color:var(--azul-claro)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.25);color:#fff}
+.btn.ghost:hover{border-color:var(--azul);color:var(--azul-claro)}
+.btn svg{width:16px;height:16px;fill:currentColor}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:2px;background:#fff;margin:6px 0;transition:.3s}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;isolation:isolate;padding-bottom:0}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,13,20,.55) 0%,rgba(7,13,20,.25) 40%,rgba(7,13,20,.92) 82%,var(--negro) 100%)}
+.hero-content{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 5vw 40px}
+.hero .eyebrow{margin-bottom:26px}
+.hero h1{font-size:clamp(30px,6.8vw,96px);font-weight:800}
+.hero h1 .linea-2{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85)}
+.hero h1 .linea-3{color:var(--azul-claro)}
+.hero-abajo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:34px}
+.hero-sub{max-width:440px;color:var(--gris);font-size:16px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+/* onda firma (equalizer) */
+.eq{display:flex;align-items:flex-end;gap:5px;height:64px;width:100%;max-width:var(--ancho);margin:44px auto 0;padding:0 5vw;overflow:hidden}
+.eq i{flex:1;min-width:2px;background:linear-gradient(180deg,var(--azul-claro),var(--azul));opacity:.85;animation:eq 1.4s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes eq{from{transform:scaleY(.12)}to{transform:scaleY(1)}}
+
+/* ============ MARQUEE MARCAS ============ */
+.marquee{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);overflow:hidden;padding:20px 0;background:rgba(7,13,20,.72)}
+.marquee-pista{display:flex;gap:0;width:max-content;animation:marquee 32s linear infinite}
+.marquee-grupo{display:flex;align-items:center;gap:56px;padding-right:56px}
+.marquee-grupo span{font-family:var(--mono);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);white-space:nowrap}
+.marquee-grupo em{color:var(--azul);font-style:normal;font-size:15px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ============ SECCIONES BASE ============ */
+.seccion{padding:120px 0;background:rgba(7,13,20,.62)}
+.cabezal{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
+.cabezal h2{font-size:clamp(25px,3.8vw,48px);font-weight:800;margin-top:18px}
+.cabezal p{color:var(--gris);max-width:460px;justify-self:end;align-self:end}
+
+/* ============ QUIENES SOMOS ============ */
+.somos{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.somos-foto{position:relative}
+.somos-foto img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.somos-foto::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--linea)}
+.somos-tag{position:absolute;left:0;bottom:0;background:var(--azul);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:12px 18px}
+.somos h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin:18px 0 26px}
+.somos p{color:var(--gris);margin-bottom:18px}
+.somos strong{color:var(--blanco);font-weight:500}
+.stats{display:flex;gap:0;margin-top:38px;border-top:1px solid var(--linea)}
+.stat{flex:1;padding:22px 18px 0;border-left:1px solid var(--linea)}
+.stat:first-child{border-left:none;padding-left:0}
+.stat b{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:34px;color:var(--azul-claro);display:block;line-height:1}
+.stat small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);display:block;margin-top:8px}
+
+/* ============ SERVICIOS (mosaico) ============ */
+.mosaico{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:300px;border:1px solid var(--linea)}
+.mo{position:relative;overflow:hidden;box-shadow:inset 0 0 0 .5px var(--linea);margin:0}
+.mo-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.mo-img:hover img{transform:scale(1.06)}
+.mo-txt{background:rgba(10,18,31,.88);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:13px;transition:background .4s}
+.mo-txt:hover{background:rgba(14,23,40,.95)}
+.mo-txt .num{font-family:var(--mono);font-size:11.5px;color:var(--azul-claro);letter-spacing:.2em}
+.mo-txt h3{font-size:19px;font-weight:700;line-height:1.15}
+.mo-txt p{color:var(--gris);font-size:14px;line-height:1.55}
+.mo-txt::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--azul);transition:width .45s ease}
+.mo-txt:hover::after{width:100%}
+.mo-cta{background:var(--azul);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.mo-cta p{font-family:var(--display);font-stretch:125%;text-transform:uppercase;font-weight:700;font-size:21px;line-height:1.1}
+.mo-cta .btn{background:#fff;border-color:#fff;color:var(--azul);align-self:flex-start}
+.mo-cta .btn:hover{background:transparent;border-color:#fff;color:#fff}
+
+/* ============ PAQUETES ============ */
+#paquetes{background:rgba(10,18,31,.68);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.packs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}
+.pack{background:rgba(7,13,20,.78);border:1px solid var(--linea);display:flex;flex-direction:column;min-width:0;transition:border-color .35s,transform .35s}
+.pack:hover{border-color:var(--azul);transform:translateY(-6px)}
+.pack-head{padding:26px 24px 22px;border-bottom:1px solid var(--linea);position:relative}
+.pack-head .cap{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.pack-head h3{font-size:25px;font-weight:800;margin-top:10px}
+.pack.destacado .pack-head::before{content:"MÁS PEDIDO";position:absolute;top:-1px;right:-1px;background:var(--azul);font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;padding:6px 12px;color:#fff}
+.pack-desc{padding:20px 24px;color:var(--gris);font-size:14.5px;line-height:1.6;flex:1}
+.pack-espec{border-top:1px solid var(--linea)}
+.pack-espec summary{list-style:none;cursor:pointer;padding:15px 24px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--azul-claro);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:color .25s}
+.pack-espec summary::-webkit-details-marker{display:none}
+.pack-espec summary::after{content:"+";font-size:16px;line-height:1;transition:transform .3s}
+.pack-espec[open] summary::after{content:"–"}
+.pack-espec summary:hover{color:#fff}
+.pack-espec-in{padding:2px 24px 20px}
+.pack-espec h4{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--azul-claro);margin:16px 0 10px}
+.pack-espec h4:first-child{margin-top:0}
+.pack-espec ul{list-style:none}
+.pack-espec li{font-family:var(--mono);font-size:12.5px;color:#c7cfdc;padding:5px 0 5px 16px;position:relative;line-height:1.45}
+.pack-espec li::before{content:"■";position:absolute;left:0;top:6px;font-size:7px;color:var(--azul)}
+.pack-espec li.op{color:var(--gris)}
+.pack-foot{padding:18px 24px 24px;border-top:1px solid var(--linea);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.pack-precio{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:17px;text-transform:uppercase;white-space:nowrap}
+.pack-precio small{font-family:var(--mono);font-size:9.5px;font-weight:400;letter-spacing:.18em;color:var(--gris);display:block;margin-bottom:3px;text-transform:uppercase}
+.pack .btn{justify-content:center;padding:12px 22px;font-size:11px;flex-shrink:0}
+
+/* ============ PROCESO ============ */
+.proceso{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.proceso-txt h2{font-size:clamp(28px,3.2vw,40px);font-weight:800;margin:18px 0 24px}
+.proceso-txt p{color:var(--gris)}
+.pasos{display:flex;flex-direction:column;border-top:1px solid var(--linea)}
+.paso{display:grid;grid-template-columns:70px 1fr;gap:22px;padding:30px 0;border-bottom:1px solid var(--linea)}
+.paso b{font-family:var(--mono);font-weight:400;font-size:13px;color:var(--azul-claro);padding-top:4px}
+.paso h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.paso p{color:var(--gris);font-size:15px}
+
+/* ============ EXPERIENCIA ============ */
+#experiencia{background:rgba(10,18,31,.68);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea)}
+.exp{background:rgba(10,18,31,.82);padding:30px 26px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;transition:background .35s}
+.exp:hover{background:rgba(14,23,40,.92)}
+.exp b{font-family:var(--display);font-stretch:125%;text-transform:uppercase;font-weight:700;font-size:17px;letter-spacing:.02em}
+.exp span{font-family:var(--mono);font-size:11.5px;color:var(--gris);line-height:1.6;letter-spacing:.04em}
+
+/* ============ GALERIA ============ */
+.galeria{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:300px;gap:14px}
+.g-item{position:relative;overflow:hidden;background:var(--panel)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s}
+.g-item:hover img{transform:scale(1.05)}
+.g-item.alta{grid-row:span 2}
+.g-cap{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 16px;background:linear-gradient(0deg,rgba(7,13,20,.85),transparent);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#dfe7f3;opacity:0;transform:translateY(8px);transition:.4s}
+.g-item:hover .g-cap{opacity:1;transform:none}
+
+/* ============ TESTIMONIOS ============ */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.testi{border:1px solid var(--linea);padding:36px 30px;display:flex;flex-direction:column;gap:22px;background:rgba(7,13,20,.78);transition:border-color .35s}
+.testi:hover{border-color:rgba(77,138,255,.5)}
+.testi .comillas{font-family:var(--display);font-size:46px;font-weight:800;color:var(--azul);line-height:.6}
+.testi p{color:#c7cfdc;font-size:15.5px;flex:1}
+.testi footer b{display:block;font-weight:600;font-size:15px}
+.testi footer span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+
+/* ============ CTA FINAL ============ */
+.cta-final{padding:140px 0;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(0,89,255,.16),transparent 60%);pointer-events:none}
+.cta-final .eyebrow{justify-content:center}
+.cta-final .eyebrow::after{content:"";width:34px;height:1px;background:var(--azul)}
+.cta-final h2{font-size:clamp(30px,4.2vw,56px);font-weight:800;max-width:860px;margin:22px auto 18px}
+.cta-final h2 em{font-style:normal;color:var(--azul-claro)}
+.cta-final p{color:var(--gris);max-width:520px;margin:0 auto 40px}
+.cta-final .btn{font-size:14px;padding:18px 38px}
+
+/* ============ FOOTER ============ */
+footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);padding:80px 0 0}
+.pie-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:60px;padding-bottom:70px}
+.pie-logo img{height:110px;width:auto;margin-bottom:24px}
+.pie-grid p{color:var(--gris);font-size:15px;max-width:320px}
+.pie h4{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--azul-claro);margin-bottom:22px}
+.pie ul{list-style:none}
+.pie li{margin-bottom:14px}
+.pie li a{color:#c7cfdc;font-size:15px;display:inline-flex;align-items:center;gap:12px;transition:color .25s}
+.pie li a:hover{color:var(--azul-claro)}
+.pie li svg{width:17px;height:17px;fill:var(--gris);flex-shrink:0}
+.pie-bajo{border-top:1px solid var(--linea);padding:24px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+
+/* wsp flotante */
+.wsp-flotante{position:fixed;right:26px;bottom:26px;z-index:90;width:58px;height:58px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,89,255,.45);transition:transform .3s}
+.wsp-flotante:hover{transform:scale(1.1)}
+.wsp-flotante svg{width:28px;height:28px;fill:#fff}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1020px){
+  .packs{grid-template-columns:repeat(2,1fr)}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .mosaico{grid-template-columns:repeat(2,1fr);grid-auto-rows:270px}
+}
+@media(max-width:860px){
+  .nav-links{position:fixed;inset:90px 0 auto 0;background:rgba(7,13,20,.97);backdrop-filter:blur(16px);flex-direction:column;padding:30px 5vw 40px;gap:24px;border-bottom:1px solid var(--linea);transform:translateY(-130%);transition:transform .4s;align-items:flex-start}
+  .nav-links.abierta{transform:none}
+  .burger{display:block}
+  .nav-cta{display:none}
+  .somos,.proceso,.cabezal{grid-template-columns:1fr}
+  .cabezal p{justify-self:start}
+  .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:230px}
+  .testis{grid-template-columns:1fr}
+  .pie-grid{grid-template-columns:1fr;gap:44px}
+  .seccion{padding:84px 0}
+}
+@media(max-width:560px){
+  .packs{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr}
+  .mosaico{grid-template-columns:1fr;grid-auto-rows:auto}
+  .mo-img{height:230px}
+  .galeria{grid-template-columns:1fr;grid-auto-rows:240px}
+  .g-item.alta{grid-row:span 1}
+  .stats{flex-direction:column;gap:18px}
+  .stat{border-left:none;padding-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rev{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--azul-claro);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<div class="fondo-fijo" aria-hidden="true"></div>
+
+<!-- iconos reutilizables -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="ico-wsp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3.2-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#" class="nav-logo" aria-label="Local Audio — inicio"><img src="assets/logo-vertical.svg" alt="Local Audio"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#somos">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#paquetes">Paquetes</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn nav-cta" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20mi%20evento." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><use href="#ico-wsp"/></svg>
+      Presupuesto
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-bg"><img src="assets/img/hero.jpg" alt="Show de Local Audio de noche con láser e iluminación en un evento en Uruguay" fetchpriority="high"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Profesionales en audio — Montevideo, Uruguay</p>
+    <h1>
+      Audio<br>
+      <span class="linea-2">Iluminación</span><br>
+      <span class="linea-3">Visuales</span>
+    </h1>
+    <div class="hero-abajo">
+      <p class="hero-sub">Soluciones en audio, iluminación, VJ, DJ y producción. Diseñamos el sonido y la ambientación de tu evento para superar tus expectativas.</p>
+      <div class="hero-ctas">
+        <a href="#paquetes" class="btn ghost">Ver paquetes</a>
+        <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20mi%20evento." target="_blank" rel="noopener">Pedir presupuesto</a>
+      </div>
+    </div>
+  </div>
+  <div class="eq" id="eq" aria-hidden="true"></div>
+</header>
+
+<!-- ============ MARCAS ============ -->
+<div class="marquee" aria-label="Marcas de equipamiento con las que trabajamos">
+  <div class="marquee-pista" id="marquee">
+    <div class="marquee-grupo">
+      <span>Electro-Voice</span><em>((●))</em>
+      <span>Turbosound</span><em>((●))</em>
+      <span>Denon DJ</span><em>((●))</em>
+      <span>Allen &amp; Heath</span><em>((●))</em>
+      <span>Shure</span><em>((●))</em>
+      <span>JBL</span><em>((●))</em>
+      <span>Pioneer DJ</span><em>((●))</em>
+      <span>Technics</span><em>((●))</em>
+      <span>Neutrik</span><em>((●))</em>
+      <span>Big Dipper</span><em>((●))</em>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUIENES SOMOS ============ -->
+<section class="seccion" id="somos">
+  <div class="wrap somos">
+    <div class="somos-foto rev">
+      <img src="assets/img/melilla-dj.jpg" alt="DJ de Local Audio mezclando en vivo en Expo Melilla" loading="lazy" style="object-position:35% 50%">
+      <span class="somos-tag">Expo Melilla · 2025</span>
+    </div>
+    <div class="rev">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2>El sonido, pensado para que disfrutes</h2>
+      <p>Local Audio brinda <strong>soluciones profesionales de sonido y audiovisual</strong> para eventos y espacios comerciales. Nos especializamos en audio en vivo, amplificación y sistemas personalizados, combinando técnica, experiencia y atención por los detalles.</p>
+      <p>Contamos con <strong>más de 10 años de experiencia nacional e internacional</strong>, trabajando en colaboración con expertos en la producción de eventos. Diseñamos el sonido y la ambientación en coordinación con nuestros clientes, basándonos en el buen uso de criterios técnicos, planeamiento y una constante comunicación.</p>
+      <div class="stats">
+        <div class="stat"><b>+10</b><small>Años de experiencia</small></div>
+        <div class="stat"><b>4</b><small>Paquetes de evento</small></div>
+        <div class="stat"><b>+400</b><small>Personas por evento</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS (mosaico) ============ -->
+<section class="seccion" id="servicios" style="padding-top:0">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Nuestros servicios</p>
+        <h2>Personalizamos<br>a tu medida</h2>
+      </div>
+      <p>Desde un concierto, una fiesta de 15 o un evento empresarial: armamos la solución técnica exacta que tu evento necesita.</p>
+    </div>
+    <div class="mosaico rev">
+      <figure class="mo mo-img"><img src="assets/img/equipo-manos.jpg" alt="Técnicos de Local Audio operando el equipo en vivo" loading="lazy"></figure>
+      <article class="mo mo-txt">
+        <span class="num">/ 01</span>
+        <h3>Sonido en vivo</h3>
+        <p>Bandas, streamings, soluciones para conferencias y post producción. Sonido claro y potente, operado por profesionales.</p>
+      </article>
+      <figure class="mo mo-img"><img src="assets/img/melilla-booth.jpg" alt="Cabina de DJ con cabezas móviles y pantallas LED en Expo Melilla" loading="lazy"></figure>
+      <article class="mo mo-txt">
+        <span class="num">/ 02</span>
+        <h3>Mejora de sistemas e instalaciones</h3>
+        <p>Relevamiento para empresas y comercios, tratamiento acústico y amplificación. Instalaciones que suenan bien todos los días.</p>
+      </article>
+      <article class="mo mo-txt">
+        <span class="num">/ 03</span>
+        <h3>Servicio audiovisual integral</h3>
+        <p>DJs, iluminadores e ingeniero de sonido. Un solo equipo para el audio, las luces y los visuales de tu evento.</p>
+      </article>
+      <figure class="mo mo-img"><img src="assets/img/cabina-denon.jpg" alt="Cabina DJ con cabezas móviles montada por Local Audio" loading="lazy"></figure>
+      <div class="mo mo-cta">
+        <p>Contanos tu evento.<br>Hacemos el resto.</p>
+        <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20una%20soluci%C3%B3n%20a%20medida%20para%20mi%20evento." target="_blank" rel="noopener">Consultar</a>
+      </div>
+      <figure class="mo mo-img"><img src="assets/img/kitejam.jpg" alt="Producción de sonido de Local Audio en Las Garzas Kite Jam" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAQUETES ============ -->
+<section class="seccion" id="paquetes">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Paquetes de evento</p>
+        <h2>Elegí el tamaño<br>de tu evento</h2>
+      </div>
+      <p>Cuatro configuraciones probadas, del evento íntimo al corporativo. Todos incluyen traslado, armado y prueba de sonido previa.</p>
+    </div>
+    <div class="packs">
+
+      <article class="pack rev">
+        <div class="pack-head">
+          <span class="cap">50 – 100 personas</span>
+          <h3>Íntimo</h3>
+        </div>
+        <div class="pack-desc">Sonido y ambientación pensados para que disfrutes de un evento íntimo de hasta 100 personas.</div>
+        <details class="pack-espec">
+          <summary>Equipamiento completo</summary>
+          <div class="pack-espec-in">
+            <h4>Sistema de audio</h4>
+            <ul>
+              <li>1 Sub Woofer EV EKX 18"</li>
+              <li>2 Turbosound M10</li>
+              <li>1 Turbosound iQ8 (retorno)</li>
+              <li>2 Denon SC5000</li>
+              <li>1 Mixer Denon X1800 o Allen &amp; Heath DB2</li>
+              <li>1 Micrófono Shure SM58</li>
+              <li>1 Cabina DJ</li>
+            </ul>
+            <h4>Iluminación</h4>
+            <ul>
+              <li>1 Trípode telescópico de 3 m</li>
+              <li>2 Cabezas móviles Wash</li>
+              <li>4 Par LED</li>
+              <li>2 Barras LED</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pack-foot">
+          <div class="pack-precio"><small>Precio</small>A consultar</div>
+          <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20un%20Evento%20%C3%8Dntimo%20(50-100%20personas)." target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="pack rev">
+        <div class="pack-head">
+          <span class="cap">100 – 200 personas</span>
+          <h3>Compacto</h3>
+        </div>
+        <div class="pack-desc">Más invitados, más sonido. Pensado para que todos puedan disfrutar, hasta 200 personas.</div>
+        <details class="pack-espec">
+          <summary>Equipamiento completo</summary>
+          <div class="pack-espec-in">
+            <h4>Sistema de audio</h4>
+            <ul>
+              <li>2 Sub Woofer EV EKX 18"</li>
+              <li>2 Medios EV EKX 15"</li>
+              <li>1 Turbosound iQ8 (retorno)</li>
+              <li>2 Denon SC5000</li>
+              <li>1 Mixer Denon X1800 o Allen &amp; Heath DB2</li>
+              <li>1 Micrófono Shure SM58</li>
+              <li>1 Cabina DJ</li>
+              <li>1 Tarima 3×6 m</li>
+            </ul>
+            <h4>Iluminación</h4>
+            <ul>
+              <li>1 Truss de arco de 3 m</li>
+              <li>4 Cabezas móviles Wash</li>
+              <li>2 Cabezas móviles Spot</li>
+              <li>2 Blinder Pixel Retro</li>
+              <li>10 Par LED · 4 Barras LED</li>
+              <li>20 m de guirnaldas</li>
+              <li>1 Flash · 1 Láser Big Dipper</li>
+              <li>1 Máquina de humo 1500 W</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pack-foot">
+          <div class="pack-precio"><small>Precio</small>A consultar</div>
+          <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20un%20Evento%20Compacto%20(100-200%20personas)." target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="pack destacado rev">
+        <div class="pack-head">
+          <span class="cap">200 – 400 personas</span>
+          <h3>Clásico</h3>
+        </div>
+        <div class="pack-desc">Cumpleaños, bodas, conciertos y ocasiones especiales merecedoras de un gran sonido, hasta 400 personas.</div>
+        <details class="pack-espec">
+          <summary>Equipamiento completo</summary>
+          <div class="pack-espec-in">
+            <h4>Sistema de audio</h4>
+            <ul>
+              <li>2 o 4 Sub Woofer EV EKX 18"</li>
+              <li>2 Medios EV EKX 15"</li>
+              <li>2 Turbosound M10</li>
+              <li>2 Turbosound iQ8 (periféricos)</li>
+              <li>2 Denon SC5000</li>
+              <li>1 Mixer Denon X1800 o Allen &amp; Heath DB2</li>
+              <li>1 Micrófono Shure SM58</li>
+              <li>1 Cabina DJ</li>
+            </ul>
+            <h4>Iluminación</h4>
+            <ul>
+              <li>1 Truss de arco de 6 m</li>
+              <li>4 Wash · 4 Beam</li>
+              <li>14 Par LED · 6 Barras LED</li>
+              <li>2 Blinder Pixel Retro</li>
+              <li>40 m de guirnaldas</li>
+              <li>2 Flash · 1 Láser Big Dipper</li>
+              <li>2 Máquinas de humo 1500 W</li>
+              <li>1 Cabina iluminador</li>
+            </ul>
+            <h4>Opcionales</h4>
+            <ul>
+              <li class="op">Show de bolas de espejo</li>
+              <li class="op">Pantallas LED · Pistas de baile</li>
+              <li class="op">Estructuras extra</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pack-foot">
+          <div class="pack-precio"><small>Precio</small>A consultar</div>
+          <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20un%20Evento%20Cl%C3%A1sico%20(200-400%20personas)." target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="pack rev">
+        <div class="pack-head">
+          <span class="cap">Empresas y marcas</span>
+          <h3>Corpo</h3>
+        </div>
+        <div class="pack-desc">Audio, iluminación y pantallas LED para eventos corporativos y presentaciones de marca: destacá lo que más importa.</div>
+        <details class="pack-espec">
+          <summary>Equipamiento completo</summary>
+          <div class="pack-espec-in">
+            <h4>Sistema de audio</h4>
+            <ul>
+              <li>1 Sub Woofer EV EKX 18"</li>
+              <li>2 Turbosound M10</li>
+              <li>1 Turbosound iQ8 (retorno)</li>
+              <li>2 Denon SC5000</li>
+              <li>1 Mixer Denon X1800 o Allen &amp; Heath DB2</li>
+              <li>2 Micrófonos inalámbricos</li>
+              <li>1 Cabina DJ</li>
+            </ul>
+            <h4>Iluminación y ambientación</h4>
+            <ul>
+              <li>6 Barras LED</li>
+              <li>6 Par LED</li>
+              <li>Estructura de Truss</li>
+            </ul>
+            <h4>Opcionales</h4>
+            <ul>
+              <li class="op">Tótem LED</li>
+              <li class="op">Escenario / tarima</li>
+              <li class="op">Micrófonos y retornos para presentaciones</li>
+              <li class="op">Proyector y pantalla</li>
+            </ul>
+          </div>
+        </details>
+        <div class="pack-foot">
+          <div class="pack-precio"><small>Precio</small>A consultar</div>
+          <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20un%20Evento%20Corporativo." target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO TRABAJAMOS ============ -->
+<section class="seccion" id="proceso">
+  <div class="wrap proceso">
+    <div class="proceso-txt rev">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Dejá lo técnico en nuestras manos</h2>
+      <p>Local Audio llegó para quedarse. Buscamos relaciones de trabajo a largo plazo, dinámicas y en constante comunicación, para que cada evento sea lo que tiene que ser: <strong style="color:var(--blanco);font-weight:500">un momento de disfrute y conexión</strong>. Lo que nos motiva es la pasión por la música, las artes visuales y aportar al ambiente cultural del Uruguay.</p>
+    </div>
+    <div class="pasos rev">
+      <div class="paso">
+        <b>/ 01</b>
+        <div>
+          <h3>Escuchamos</h3>
+          <p>Nos contás tu evento: lugar, cantidad de invitados y qué querés lograr. Relevamos los requerimientos técnicos.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <b>/ 02</b>
+        <div>
+          <h3>Diseñamos</h3>
+          <p>Armamos una solución a medida con criterio técnico: audio, iluminación y visuales coordinados con vos.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <b>/ 03</b>
+        <div>
+          <h3>Ejecutamos</h3>
+          <p>Llegamos, armamos y probamos todo antes de que empiece. Vos disfrutás, nosotros operamos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section class="seccion" id="experiencia">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Nuestra experiencia</p>
+        <h2>De Montevideo<br>a Berlín</h2>
+      </div>
+      <p>Trabajamos junto a productoras, marcas y clubes en Uruguay y Europa.</p>
+    </div>
+    <div class="exp-grid rev">
+      <div class="exp"><b>Anomalie Club — Berlín</b><span>Parte del equipo de sonido de uno de los clubes más importantes de Berlín.</span></div>
+      <div class="exp"><b>Berlin Music Awards</b><span>Más de 4 años en el equipo técnico del evento.</span></div>
+      <div class="exp"><b>Bodega Melilla &amp; Las Espinas</b><span>Eventos comerciales y música de ambientación para la marca.</span></div>
+      <div class="exp"><b>Magma Futura</b><span>Eventos audiovisuales en pantallas inmersivas y sonido para artistas y DJs.</span></div>
+      <div class="exp"><b>Oriuno</b><span>Ciclos de música todos los fines de semana con DJ y ambientación.</span></div>
+      <div class="exp"><b>Anastasio</b><span>Producción de eventos en su parador, con artistas locales e internacionales.</span></div>
+      <div class="exp"><b>Novahaus</b><span>Producción de audio para proyectos audiovisuales.</span></div>
+      <div class="exp"><b>Eventos corporativos</b><span>Fiestas de fin de año con la más alta producción y tecnología.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="seccion" id="galeria">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Nuestro trabajo</p>
+        <h2>Así se ve<br>y así suena</h2>
+      </div>
+      <p>Cada evento se trata como si fuera el más importante. Seguinos en <a href="https://www.instagram.com/local.audio/" target="_blank" rel="noopener" style="color:var(--azul-claro)">@local.audio</a> para ver más.</p>
+    </div>
+    <div class="galeria rev">
+      <figure class="g-item alta"><img src="assets/img/hero.jpg" alt="Evento nocturno con láser rojo e iluminación púrpura de Local Audio" loading="lazy"><figcaption class="g-cap">Show nocturno · Láser &amp; humo</figcaption></figure>
+      <figure class="g-item"><img src="assets/img/cabina-denon.jpg" alt="Cabina Denon DJ con cabezas móviles en evento al aire libre" loading="lazy"><figcaption class="g-cap">Cabina DJ · Moving heads</figcaption></figure>
+      <figure class="g-item"><img src="assets/img/noche-purpura.jpg" alt="Iluminación púrpura y láser en fiesta nocturna en Uruguay" loading="lazy"><figcaption class="g-cap">Ambientación nocturna</figcaption></figure>
+      <figure class="g-item"><img src="assets/img/melilla-booth.jpg" alt="Cabina de DJ con cabezas móviles y pantallas LED en Expo Melilla" loading="lazy"><figcaption class="g-cap">Expo Melilla 2025</figcaption></figure>
+      <figure class="g-item"><img src="assets/img/kitejam.jpg" alt="Producción de sonido en Las Garzas Kite Jam" loading="lazy"><figcaption class="g-cap">Las Garzas · Kite Jam</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="seccion" id="testimonios" style="padding-top:0">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Testimonios</p>
+        <h2>Eventos que<br>siguen sonando</h2>
+      </div>
+    </div>
+    <div class="testis rev">
+      <article class="testi">
+        <span class="comillas">“</span>
+        <p>Contratamos el paquete Clásico para nuestro casamiento y el sonido fue impecable de principio a fin. La iluminación transformó el salón y la pista no se vació nunca. El mejor servicio de sonido para eventos que vimos en Montevideo.</p>
+        <footer><b>Sofía &amp; Nacho</b><span>Casamiento · 350 invitados</span></footer>
+      </article>
+      <article class="testi">
+        <span class="comillas">“</span>
+        <p>Para la fiesta de fin de año de la empresa necesitábamos audio, pantallas y micrófonos para las presentaciones. Llegaron temprano, probaron todo y no hubo un solo problema técnico. Muy profesionales.</p>
+        <footer><b>Valentina R.</b><span>Evento corporativo · Montevideo</span></footer>
+      </article>
+      <article class="testi">
+        <span class="comillas">“</span>
+        <p>Alquilamos sonido e iluminación para los 15 de mi hija y superó todo lo que imaginamos: el láser, el humo y las cabezas móviles hicieron que pareciera un boliche. Cero estrés para nosotros.</p>
+        <footer><b>Diego P.</b><span>Fiesta de 15 · Canelones</span></footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="contacto">
+  <div class="wrap rev">
+    <p class="eyebrow">Contacto</p>
+    <h2>Contáctanos hoy para que tu evento tenga un audio <em>inolvidable</em></h2>
+    <p>Respondemos por WhatsApp con una propuesta a medida para tu fecha, tu lugar y tu cantidad de invitados.</p>
+    <a class="btn" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20mi%20evento." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><use href="#ico-wsp"/></svg>
+      +598 94 192 034
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-grid">
+      <div class="pie-logo">
+        <img src="assets/logo-vertical.svg" alt="Local Audio">
+        <p>Soluciones profesionales de sonido, iluminación y visuales para eventos y espacios comerciales en Uruguay.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+59894192034"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>094 192 034</a></li>
+          <li><a href="https://wa.me/59894192034" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#ico-wsp"/></svg>WhatsApp +598 94 192 034</a></li>
+          <li><a href="mailto:localaudiouy@gmail.com"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>localaudiouy@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seguinos</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/local.audio/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.3-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1Zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.9.3-.5.2-.8.4-1.1.7-.3.3-.6.7-.7 1.1-.1.4-.3.8-.3 1.9-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.9.2.5.4.8.7 1.1.3.3.7.6 1.1.7.4.1.8.3 1.9.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.9-.3.5-.2.8-.4 1.1-.7.3-.3.6-.7.7-1.1.1-.4.3-.8.3-1.9.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.9-.2-.5-.4-.8-.7-1.1-.3-.3-.7-.6-1.1-.7-.4-.1-.8-.3-1.9-.3-1.2-.1-1.6-.1-4.7-.1Zm0 3.3a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2Zm0 8.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6Zm5.3-9.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>@local.audio</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61552248909200" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V21h3.4Z"/></svg>Local Audio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-bajo">
+      <span>© 2026 Local Audio — Montevideo, Uruguay</span>
+      <span>Audio · Iluminación · VJ · DJ · Producción</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wsp-flotante" href="https://wa.me/59894192034?text=Hola%20Local%20Audio!%20Quiero%20un%20presupuesto%20para%20mi%20evento." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24"><use href="#ico-wsp"/></svg>
+</a>
+
+<script>
+// equalizer del hero — la onda de la marca, viva
+(function(){
+  var eq=document.getElementById('eq');
+  if(!eq)return;
+  function llenar(){
+    var n=Math.floor(Math.max(window.innerWidth||0,320)/9);
+    n=Math.min(n,133);
+    if(eq.children.length===n)return;
+    eq.innerHTML='';
+    for(var i=0;i<n;i++){
+      var b=document.createElement('i');
+      b.style.animationDuration=(0.9+Math.random()*1.4).toFixed(2)+'s';
+      b.style.animationDelay=(-Math.random()*2).toFixed(2)+'s';
+      b.style.height=(18+Math.random()*82).toFixed(0)+'%';
+      eq.appendChild(b);
+    }
+  }
+  llenar();
+  window.addEventListener('resize',llenar);
+  window.addEventListener('load',llenar);
+})();
+
+// duplicar marquee para loop infinito
+(function(){
+  var m=document.getElementById('marquee');
+  if(m) m.appendChild(m.children[0].cloneNode(true));
+})();
+
+// nav sólida al scrollear
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('solid',window.scrollY>40)};
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+
+// menú mobile
+(function(){
+  var burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',function(){links.classList.toggle('abierta')});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('abierta')});
+})();
+
+// reveals
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
