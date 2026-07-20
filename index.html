@@ -110,7 +110,7 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .seccion{padding:120px 0;background:rgba(7,13,20,.62)}
 .cabezal{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
 .cabezal h2{font-size:clamp(25px,3.8vw,48px);font-weight:800;margin-top:18px}
-.cabezal p{color:var(--gris);max-width:460px;justify-self:end;align-self:end}
+.cabezal > p{color:var(--gris);max-width:460px;justify-self:end;align-self:end}
 
 /* ============ QUIENES SOMOS ============ */
 .somos{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
@@ -248,7 +248,7 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
   .burger{display:block}
   .nav-cta{display:none}
   .somos,.proceso,.cabezal{grid-template-columns:1fr}
-  .cabezal p{justify-self:start}
+  .cabezal > p{justify-self:start}
   .galeria{grid-template-columns:1fr 1fr;grid-auto-rows:230px}
   .testis{grid-template-columns:1fr}
   .pie-grid{grid-template-columns:1fr;gap:44px}
