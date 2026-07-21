@@ -121,9 +121,9 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .somos h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin:18px 0 26px}
 .somos p{color:var(--gris);margin-bottom:18px}
 .somos strong{color:var(--blanco);font-weight:500}
-.stats{display:flex;gap:0;margin-top:38px;border-top:1px solid var(--linea)}
-.stat{flex:1;padding:22px 18px 0;border-left:1px solid var(--linea)}
-.stat:first-child{border-left:none;padding-left:0}
+.stats{display:flex;gap:12px;margin-top:38px}
+.stat{flex:1;min-width:0;padding:20px 16px;border:1px solid var(--linea);background:rgba(7,13,20,.45);transition:border-color .35s,background .35s}
+.stat:hover{border-color:rgba(77,138,255,.45);background:rgba(10,18,31,.6)}
 .stat b{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:34px;color:var(--azul-claro);display:block;line-height:1}
 .stat small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);display:block;margin-top:8px}
 
@@ -267,8 +267,10 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
   .mo-img{height:230px}
   .galeria{grid-template-columns:1fr;grid-auto-rows:240px}
   .g-item.alta{grid-row:span 1}
-  .stats{flex-direction:column;gap:18px}
-  .stat{border-left:none;padding-left:0}
+  .stats{gap:8px;margin-top:30px}
+  .stat{padding:14px 6px;text-align:center}
+  .stat b{font-size:26px}
+  .stat small{font-size:8px;letter-spacing:.08em;margin-top:6px;line-height:1.35}
   /* botones del hero: chicos y en la misma línea */
   .hero-abajo{margin-top:24px}
   .hero-ctas{flex-wrap:nowrap;gap:10px;width:100%}
