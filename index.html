@@ -90,7 +90,7 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .hero h1 .linea-2{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.85)}
 .hero h1 .linea-3{color:var(--azul-claro)}
 .hero-abajo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:34px}
-.hero-sub{max-width:440px;color:var(--gris);font-size:16px}
+.hero-sub{max-width:440px;color:#c7cfdc;font-size:16px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 
 /* onda firma (equalizer) */
@@ -253,6 +253,12 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
   .testis{grid-template-columns:1fr}
   .pie-grid{grid-template-columns:1fr;gap:44px}
   .seccion{padding:84px 0}
+  /* eyebrow del hero solo en desktop */
+  .hero .eyebrow{display:none}
+  /* más contraste para el texto del hero sobre la foto */
+  .hero::before{background:linear-gradient(180deg,rgba(7,13,20,.5) 0%,rgba(7,13,20,.45) 35%,rgba(7,13,20,.9) 78%,var(--negro) 100%)}
+  .hero h1{text-shadow:0 2px 24px rgba(0,0,0,.55)}
+  .hero-sub{color:#e4eaf3;text-shadow:0 1px 12px rgba(0,0,0,.75)}
 }
 @media(max-width:560px){
   .packs{grid-template-columns:1fr}
@@ -263,6 +269,10 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
   .g-item.alta{grid-row:span 1}
   .stats{flex-direction:column;gap:18px}
   .stat{border-left:none;padding-left:0}
+  /* botones del hero: chicos y en la misma línea */
+  .hero-abajo{margin-top:24px}
+  .hero-ctas{flex-wrap:nowrap;gap:10px;width:100%}
+  .hero-ctas .btn{flex:1;justify-content:center;padding:13px 8px;font-size:11px;letter-spacing:.1em;white-space:nowrap}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
