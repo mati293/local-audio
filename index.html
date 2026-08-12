@@ -827,6 +827,19 @@ p.eyebrow{color:var(--blanco)}
   },{threshold:.12});
   document.querySelectorAll('.rev').forEach(function(el){io.observe(el)});
 })();
+
+// tracking de clics a WhatsApp: Pixel (Lead) + Google Analytics
+(function(){
+  var sel='a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href^="tel:"]';
+  document.querySelectorAll(sel).forEach(function(a){
+    a.addEventListener('click',function(){
+      var esTel=(a.getAttribute('href')||'').indexOf('tel:')===0;
+      var canal=esTel?'telefono':'whatsapp';
+      try{ if(typeof fbq==='function') fbq('track','Lead',{content_name:'Contacto '+canal}); }catch(e){}
+      try{ if(typeof gtag==='function') gtag('event','generate_lead',{method:canal}); }catch(e){}
+    },{passive:true});
+  });
+})();
 </script>
 </body>
 </html>
