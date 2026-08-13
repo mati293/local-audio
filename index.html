@@ -144,6 +144,8 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .seccion{padding:120px 0;background:rgba(7,13,20,.62)}
 .cabezal{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
 .cabezal h2{font-size:clamp(25px,3.8vw,48px);font-weight:800;margin-top:18px}
+.h2-berlin{font-size:clamp(24px,3vw,40px)}
+.h2-berlin span{white-space:nowrap}
 .cabezal > p{color:var(--gris);max-width:460px;justify-self:end;align-self:end}
 
 /* ============ QUIENES SOMOS ============ */
@@ -169,7 +171,7 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .mo-txt{background:rgba(10,18,31,.88);padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:13px;transition:background .4s}
 .mo-txt:hover{background:rgba(14,23,40,.95)}
 .mo-txt .num{font-family:var(--mono);font-size:11.5px;color:var(--azul-claro);letter-spacing:.2em}
-.mo-txt h3{font-size:19px;font-weight:700;line-height:1.15}
+.mo-txt h3{font-size:15px;font-weight:700;line-height:1.18;overflow-wrap:normal;hyphens:none}
 .mo-txt p{color:var(--gris);font-size:14px;line-height:1.55}
 .mo-txt::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--azul);transition:width .45s ease}
 .mo-txt:hover::after{width:100%}
@@ -662,7 +664,7 @@ p.eyebrow{color:var(--blanco)}
     <div class="cabezal rev">
       <div>
         <p class="eyebrow">Nuestra experiencia</p>
-        <h2>De Berlín<br>a Montevideo</h2>
+        <h2 class="h2-berlin">De Berlín<br><span>a Montevideo</span></h2>
       </div>
       <p>Trabajamos junto a productoras, marcas y clubes en Uruguay y Europa.</p>
     </div>
