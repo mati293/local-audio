@@ -55,13 +55,50 @@ src="https://www.facebook.com/tr?id=2114837385731149&ev=PageView&noscript=1"
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://localaudioeventos.com/#business",
   "name": "Local Audio",
-  "description": "Soluciones profesionales de sonido, iluminación, visuales y producción para eventos.",
+  "alternateName": "Local Audio Eventos",
+  "description": "Alquiler y producción de sonido, iluminación, visuales y DJ para eventos en Montevideo, Uruguay. Casamientos, fiestas de 15, cumpleaños, conciertos y eventos corporativos, con más de 10 años de experiencia.",
+  "url": "https://localaudioeventos.com/",
   "telephone": "+59894192034",
   "email": "localaudiouy@gmail.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Montevideo", "addressCountry": "UY" },
+  "image": "https://localaudioeventos.com/assets/img/hero.jpg",
+  "logo": "https://localaudioeventos.com/assets/favicon-96.png",
+  "address": { "@type": "PostalAddress", "streetAddress": "Coimbra 5750", "addressLocality": "Montevideo", "addressCountry": "UY" },
+  "areaServed": [
+    { "@type": "City", "name": "Montevideo" },
+    { "@type": "AdministrativeArea", "name": "Canelones" },
+    { "@type": "Country", "name": "Uruguay" }
+  ],
   "sameAs": ["https://www.instagram.com/local.audio/", "https://www.facebook.com/profile.php?id=61552248909200"],
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "currenciesAccepted": "UYU",
+  "knowsAbout": ["Alquiler de sonido", "Iluminación para eventos", "DJ", "Producción audiovisual", "Escenario y tarima", "Pantallas LED"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Paquetes de eventos",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Evento Íntimo (50-100 personas)", "price": "17900", "priceCurrency": "UYU" },
+      { "@type": "Offer", "name": "Evento Compacto (100-200 personas)", "price": "24900", "priceCurrency": "UYU" },
+      { "@type": "Offer", "name": "Evento Clásico (200-400 personas)", "price": "34900", "priceCurrency": "UYU" },
+      { "@type": "Offer", "name": "Evento Corpo (empresas y marcas)", "price": "14900", "priceCurrency": "UYU" }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Qué incluye el alquiler de sonido e iluminación de Local Audio?", "acceptedAnswer": { "@type": "Answer", "text": "Cada paquete incluye el sistema de audio, la iluminación y la cabina de DJ. Además, sin costo: el traslado, el armado y la prueba de sonido previa. Trabajamos con marcas como Electro-Voice, Turbosound, Denon y Allen & Heath." } },
+    { "@type": "Question", "name": "¿Para cuántas personas tienen equipos?", "acceptedAnswer": { "@type": "Answer", "text": "Cubrimos desde eventos íntimos de 50 personas hasta producciones de más de 400, con cuatro configuraciones: Íntimo, Compacto, Clásico y Corpo." } },
+    { "@type": "Question", "name": "¿Cuánto cuesta alquilar sonido para un evento?", "acceptedAnswer": { "@type": "Answer", "text": "Los precios arrancan desde $14.900 + IVA para eventos corporativos y desde $17.900 + IVA para fiestas. El valor final depende del tamaño del evento; te pasamos un presupuesto sin cargo por WhatsApp." } },
+    { "@type": "Question", "name": "¿En qué zonas de Uruguay trabajan?", "acceptedAnswer": { "@type": "Answer", "text": "Somos de Montevideo y trabajamos en toda la zona metropolitana. Si tu evento es en otra parte del país, escribinos y lo coordinamos." } },
+    { "@type": "Question", "name": "¿Hacen casamientos, fiestas de 15 y eventos corporativos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Producimos sonido e iluminación para casamientos, cumpleaños, fiestas de 15, conciertos y eventos corporativos o presentaciones de marca." } },
+    { "@type": "Question", "name": "¿Con cuánta anticipación conviene reservar?", "acceptedAnswer": { "@type": "Answer", "text": "Recomendamos consultar la disponibilidad de tu fecha lo antes posible, sobre todo en temporada alta. Escribinos por WhatsApp y te confirmamos en el momento." } },
+    { "@type": "Question", "name": "¿Cómo pido un presupuesto?", "acceptedAnswer": { "@type": "Answer", "text": "Por WhatsApp al +598 94 192 034. Contanos la fecha, el lugar y la cantidad de invitados y te armamos una propuesta a medida." } }
+  ]
 }
 </script>
 <style>
@@ -245,6 +282,17 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .testi p{color:#c7cfdc;font-size:15.5px;flex:1}
 .testi footer b{display:block;font-weight:600;font-size:15px}
 .testi footer span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+
+/* ============ FAQ ============ */
+#faq{background:rgba(10,18,31,.68);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.faq-lista{max-width:840px;margin:0 auto;border-top:1px solid var(--linea)}
+.faq-item{border-bottom:1px solid var(--linea)}
+.faq-item summary{list-style:none;cursor:pointer;padding:24px 4px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;font-family:var(--display);font-stretch:125%;text-transform:uppercase;font-weight:700;font-size:clamp(15px,2vw,19px);line-height:1.2;transition:color .25s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--mono);font-size:22px;line-height:1;color:var(--azul-claro);flex-shrink:0;transition:transform .3s}
+.faq-item[open] summary::after{content:"–"}
+.faq-item summary:hover{color:var(--azul-claro)}
+.faq-item p{color:var(--gris);font-size:15.5px;line-height:1.65;padding:0 4px 26px;max-width:680px}
 
 /* ============ CTA FINAL ============ */
 .cta-final{padding:140px 0;text-align:center;position:relative;overflow:hidden}
@@ -727,6 +775,49 @@ p.eyebrow{color:var(--blanco)}
         <p>Alquilamos sonido e iluminación para los 15 de mi hija y superó todo lo que imaginamos: el láser, el humo y las cabezas móviles hicieron que pareciera un boliche. Cero estrés para nosotros.</p>
         <footer><b>Diego P.</b><span>Fiesta de 15 · Canelones</span></footer>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="seccion" id="faq">
+  <div class="wrap">
+    <div class="cabezal rev">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Todo lo que<br>necesitás saber</h2>
+      </div>
+      <p>Y si te queda alguna duda, escribinos por WhatsApp — respondemos al toque.</p>
+    </div>
+    <div class="faq-lista rev">
+      <details class="faq-item">
+        <summary>¿Qué incluye el alquiler de sonido e iluminación de Local Audio?</summary>
+        <p>Cada paquete incluye el sistema de audio, la iluminación y la cabina de DJ. Además, sin costo: el traslado, el armado y la prueba de sonido previa. Trabajamos con marcas como Electro-Voice, Turbosound, Denon y Allen &amp; Heath.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Para cuántas personas tienen equipos?</summary>
+        <p>Cubrimos desde eventos íntimos de 50 personas hasta producciones de más de 400, con cuatro configuraciones: Íntimo, Compacto, Clásico y Corpo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta alquilar sonido para un evento?</summary>
+        <p>Los precios arrancan desde $14.900 + IVA para eventos corporativos y desde $17.900 + IVA para fiestas. El valor final depende del tamaño del evento; te pasamos un presupuesto sin cargo por WhatsApp.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿En qué zonas de Uruguay trabajan?</summary>
+        <p>Somos de Montevideo y trabajamos en toda la zona metropolitana. Si tu evento es en otra parte del país, escribinos y lo coordinamos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Hacen casamientos, fiestas de 15 y eventos corporativos?</summary>
+        <p>Sí. Producimos sonido e iluminación para casamientos, cumpleaños, fiestas de 15, conciertos y eventos corporativos o presentaciones de marca.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Con cuánta anticipación conviene reservar?</summary>
+        <p>Recomendamos consultar la disponibilidad de tu fecha lo antes posible, sobre todo en temporada alta. Escribinos por WhatsApp y te confirmamos en el momento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo pido un presupuesto?</summary>
+        <p>Por WhatsApp al +598 94 192 034. Contanos la fecha, el lugar y la cantidad de invitados y te armamos una propuesta a medida.</p>
+      </details>
     </div>
   </div>
 </section>
