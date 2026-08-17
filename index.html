@@ -90,7 +90,20 @@ src="https://www.facebook.com/tr?id=2114837385731149&ev=PageView&noscript=1"
       { "@type": "Offer", "name": "Evento Clásico (200-400 personas)", "price": "34900", "priceCurrency": "UYU" },
       { "@type": "Offer", "name": "Evento Corpo (empresas y marcas)", "price": "14900", "priceCurrency": "UYU" }
     ]
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "19",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    { "@type": "Review", "author": { "@type": "Person", "name": "Juanfe Etchemendy" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Excelente servicio! Desde el primer momento de contacto, una respuesta ágil y rápida. Me llevé el paquete más grande para mi cumpleaños de 30 y la calidad de luces y sonido nos hizo bailar toda la noche. Muy recomendable!" },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Micaela Ferraro" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Festejamos el cumple de 15 de mi sobrina con Local Audio y superó nuestras expectativas. El DJ se adaptó a nuestros pedidos y el sonido fue excelente y claro." },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Gonzalo Yorio" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Le alquilé dos parlantes y micrófono para un evento empresarial. El servicio fue perfecto, dejó todo armado y listo para usar!" },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Federico Novelli" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Servicio y equipamiento de excelente calidad! Brinda confianza y rapidez. Muy profesional en los trabajos, producto final y acompañamiento. Muy recomendable!" }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -289,6 +302,12 @@ nav.solid{background:rgba(7,13,20,.88);backdrop-filter:blur(14px);border-color:v
 .testi p{color:#c7cfdc;font-size:15.5px;flex:1}
 .testi footer b{display:block;font-weight:600;font-size:15px}
 .testi footer span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.reviews-badge{justify-self:end;align-self:end;display:flex;flex-direction:column;gap:7px}
+.reviews-badge .stars{color:#ffc233;font-size:19px;letter-spacing:3px;line-height:1}
+.reviews-badge b{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:22px}
+.reviews-badge b span{color:var(--gris);font-size:14px}
+.reviews-badge a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--azul-claro);text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;transition:color .25s}
+.reviews-badge a:hover{color:#fff}
 
 /* ============ FAQ ============ */
 #faq{background:rgba(10,18,31,.68);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
@@ -769,22 +788,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="eyebrow">Testimonios</p>
         <h2>Eventos que<br>siguen sonando</h2>
       </div>
+      <div class="reviews-badge">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <b>5.0 <span>/ 19 reseñas</span></b>
+        <a href="https://share.google/Jd9mkHfDr2EWsX6af" target="_blank" rel="noopener">Ver reseñas en Google →</a>
+      </div>
     </div>
     <div class="testis rev">
       <article class="testi">
         <span class="comillas">“</span>
-        <p>Contratamos el paquete Clásico para nuestro casamiento y el sonido fue impecable de principio a fin. La iluminación transformó el salón y la pista no se vació nunca. El mejor servicio de sonido para eventos que vimos en Montevideo.</p>
-        <footer><b>Sofía &amp; Nacho</b><span>Casamiento · 350 invitados</span></footer>
+        <p>Excelente servicio! Desde el primer momento de contacto, una respuesta ágil y rápida. Me llevé el paquete más grande para mi cumpleaños de 30 y la calidad de luces y sonido nos hizo bailar toda la noche. Muy recomendable!</p>
+        <footer><b>Juanfe Etchemendy</b><span>Cumpleaños de 30</span></footer>
       </article>
       <article class="testi">
         <span class="comillas">“</span>
-        <p>Para la fiesta de fin de año de la empresa necesitábamos audio, pantallas y micrófonos para las presentaciones. Llegaron temprano, probaron todo y no hubo un solo problema técnico. Muy profesionales.</p>
-        <footer><b>Valentina R.</b><span>Evento corporativo · Montevideo</span></footer>
+        <p>Festejamos el cumple de 15 de mi sobrina con Local Audio y superó nuestras expectativas. El DJ se adaptó a nuestros pedidos y el sonido fue excelente y claro.</p>
+        <footer><b>Micaela Ferraro</b><span>Fiesta de 15</span></footer>
       </article>
       <article class="testi">
         <span class="comillas">“</span>
-        <p>Alquilamos sonido e iluminación para los 15 de mi hija y superó todo lo que imaginamos: el láser, el humo y las cabezas móviles hicieron que pareciera un boliche. Cero estrés para nosotros.</p>
-        <footer><b>Diego P.</b><span>Fiesta de 15 · Canelones</span></footer>
+        <p>Le alquilé dos parlantes y micrófono para un evento empresarial. El servicio fue perfecto, dejó todo armado y listo para usar!</p>
+        <footer><b>Gonzalo Yorio</b><span>Evento empresarial</span></footer>
       </article>
     </div>
   </div>
