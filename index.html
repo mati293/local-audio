@@ -341,7 +341,11 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
 .pie li a{color:#c7cfdc;font-size:15px;display:inline-flex;align-items:center;gap:12px;transition:color .25s}
 .pie li a:hover{color:var(--azul-claro)}
 .pie li svg{width:17px;height:17px;fill:var(--gris);flex-shrink:0}
-.pie-bajo{border-top:1px solid var(--linea);padding:24px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.pie-bajo{border-top:1px solid var(--linea);padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.dev-by{display:inline-flex;align-items:center;gap:9px}
+.dev-by img{height:15px;width:auto;display:block;opacity:.8;transition:opacity .25s}
+.dev-by a{display:inline-flex;align-items:center}
+.dev-by a:hover img{opacity:1}
 
 /* wsp flotante */
 .wsp-flotante{position:fixed;right:26px;bottom:26px;z-index:90;width:58px;height:58px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,89,255,.45);transition:transform .3s}
@@ -387,6 +391,8 @@ footer.pie{border-top:1px solid var(--linea);background:rgba(7,13,20,.85);paddin
   .hero-abajo{margin-top:24px}
   .hero-ctas{flex-wrap:nowrap;gap:10px;width:100%}
   .hero-ctas .btn{flex:1;justify-content:center;padding:13px 8px;font-size:11px;letter-spacing:.1em;white-space:nowrap}
+  /* footer: copyright y crédito apilados y alineados a la izquierda */
+  .pie-bajo{flex-direction:column;align-items:flex-start;gap:14px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -896,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="pie-bajo">
       <span>© 2026 Local Audio — Montevideo, Uruguay</span>
-      <span>Audio · Iluminación · VJ · DJ · Producción</span>
+      <span class="dev-by">Desarrollado por <a href="https://nova-haus.com" target="_blank" rel="noopener" aria-label="Novahaus"><img src="assets/novahaus.svg" alt="Novahaus"></a></span>
     </div>
   </div>
 </footer>
